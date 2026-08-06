@@ -9,39 +9,35 @@ struct Node
 
 struct Node *head = NULL;
 
+void insertEnd(int value)
+{
+    struct Node *newNode, *temp;
+
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if(head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+
+    temp = head;
+    while(temp->next != NULL)
+        temp = temp->next;
+
+    temp->next = newNode;
+}
+
 void insertBeginning(int value)
 {
     struct Node *newNode;
 
     newNode = (struct Node *)malloc(sizeof(struct Node));
-
     newNode->data = value;
     newNode->next = head;
     head = newNode;
-}
-
-void insertAfter(int key, int value)
-{
-    struct Node *temp = head;
-
-    while(temp != NULL)
-    {
-        if(temp->data == key)
-        {
-            struct Node *newNode;
-
-            newNode = (struct Node *)malloc(sizeof(struct Node));
-
-            newNode->data = value;
-            newNode->next = temp->next;
-            temp->next = newNode;
-            return;
-        }
-
-        temp = temp->next;
-    }
-
-    printf("Node not found.\n");
 }
 
 void display()
@@ -53,22 +49,32 @@ void display()
         printf("%d -> ", temp->data);
         temp = temp->next;
     }
-
     printf("NULL\n");
 }
 
 int main()
 {
-    insertBeginning(30);
-    insertBeginning(20);
-    insertBeginning(10);
+    int n, value, newValue, i;
 
-    printf("Original List:\n");
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &value);
+        insertEnd(value);
+    }
+
+    printf("\nOriginal List:\n");
     display();
 
-    insertAfter(20, 25);
+    printf("\nEnter new item to insert at beginning: ");
+    scanf("%d", &newValue);
 
-    printf("After Insertion:\n");
+    insertBeginning(newValue);
+
+    printf("\nUpdated List:\n");
     display();
 
     return 0;
