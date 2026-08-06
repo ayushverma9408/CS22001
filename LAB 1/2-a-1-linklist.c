@@ -1,3 +1,7 @@
+/*
+Q2.(a) Implement a program to insert an ITEM into a Singly Linked List (SLL) 
+1. At the beginning.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
