@@ -1,3 +1,6 @@
+/*
+Q2. (b) Write a program and implement to reverse the content of a singly linked list in groups of size k. If the number of nodes is not a multiple of k, leave the last group as it is. You must use O(1) extra space.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
