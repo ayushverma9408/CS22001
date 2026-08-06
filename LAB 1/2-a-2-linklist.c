@@ -8,13 +8,12 @@ struct Node
 };
 
 struct Node *head = NULL;
- 
+
 void insertEnd(int value)
 {
     struct Node *newNode, *temp;
 
     newNode = (struct Node *)malloc(sizeof(struct Node));
-
     newNode->data = value;
     newNode->next = NULL;
 
@@ -27,13 +26,11 @@ void insertEnd(int value)
     temp = head;
 
     while(temp->next != NULL)
-    {
         temp = temp->next;
-    }
 
     temp->next = newNode;
 }
- 
+
 void display()
 {
     struct Node *temp = head;
@@ -49,7 +46,7 @@ void display()
 
 int main()
 {
-    int n, value, i;
+    int n, value, newValue, i;
 
     printf("Enter number of nodes: ");
     scanf("%d", &n);
@@ -61,7 +58,15 @@ int main()
         insertEnd(value);
     }
 
-    printf("Linked List:\n");
+    printf("\nOriginal List:\n");
+    display();
+
+    printf("\nEnter new item to insert at end: ");
+    scanf("%d", &newValue);
+
+    insertEnd(newValue);
+
+    printf("\nUpdated List:\n");
     display();
 
     return 0;
