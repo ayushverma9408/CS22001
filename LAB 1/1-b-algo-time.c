@@ -1,3 +1,15 @@
+/*
+Q1. (b) Test your algorithm for different input sizes ranging from 10-100000. Report the running time for the table given below. 
+Table 1 
+Sl. No.  Input Size Execution Time
+1         10   
+2         500  
+3         1000  
+4         10000  
+5         50000  
+6         75000  
+7         100000  
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
