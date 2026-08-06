@@ -1,5 +1,5 @@
 /*
-Implementation of Insertion Sort algorithm.
+Q1. (a) Implement the Insertion sort algorithm.
 */
 #include <stdio.h>
 
