@@ -45,15 +45,13 @@ void deleteBefore(int num)
         printf("Deletion not possible\n");
         return;
     }
-
-    /* NUM is in the first node */
+ 
     if(head->data == num)
     {
         printf("No node exists before %d\n", num);
         return;
     }
-
-    /* NUM is in the second node */
+ 
     if(head->next->data == num)
     {
         q = head;
